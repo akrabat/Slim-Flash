@@ -16,7 +16,7 @@
         "php": ">=5.5.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.0"
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -27,5 +27,15 @@
         "psr-4": {
             "Slim\\Flash\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "check": [
+            "@test:coverage"
+        ],
+        "test": "phpunit --do-not-cache-result --colors=always",
+        "test:coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --do-not-cache-result --colors=always --coverage-clover build/coverage/clover.xml --coverage-html build/coverage --coverage-text"
+        ]
     }
 }

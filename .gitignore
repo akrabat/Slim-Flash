@@ -1,2 +1,6 @@
-vendor
+.DS_Store
+.phpunit.cache
+/build
+/vendor
+clover.xml
 composer.lock
