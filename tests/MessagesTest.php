@@ -1,11 +1,12 @@
 <?php
 namespace Slim\Flash\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Flash\Messages;
 
-class MessagesTest extends \PHPUnit_Framework_TestCase
+class MessagesTest extends TestCase
 {
     // Test get messages from previous request
     public function testGetMessagesFromPrevRequest()
@@ -169,7 +170,7 @@ class MessagesTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(['An info'], $messages['info']);
 
         $this->assertArrayHasKey('slimFlash', $storage);
-        $this->assertEmpty([], $storage['slimFlash']);
+        $this->assertEmpty($storage['slimFlash']);
     }
 
     // Test set messages for next request
